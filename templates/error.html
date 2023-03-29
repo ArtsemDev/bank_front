@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ exc.status_code }}
+{% endblock %}
+
+{% block content %}
+    {% include 'components/navigation.html' %}
+
+    {% with %}
+        {% set background='assets/img/about-bg.jpg' %}
+        {% set heading=exc.status_code %}
+        {% set subheading=exc.detail|upper %}
+        {% include 'components/header.html' %}
+    {% endwith %}
+
+    {% include 'components/footer.html' %}
+{% endblock %}
